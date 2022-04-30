@@ -7,15 +7,15 @@ class binary
 		int a,b;
 	public:
 		void set();
-		binary operator +(binary &b1);
+		friend binary operator +(binary &b1, binary &b2);
 		void show();
 };
 
-binary binary::operator +(binary &b1)
+binary operator +(binary &b1, binary &b2)
 {
 	binary b3;
-	b3.a = a+b1.a;
-	b3.b = b+b1.b;
+	b3.a = b1.a + b2.a;
+	b3.b = b1.b + b2.b;
 	return b3;
 }
 
